@@ -8,6 +8,10 @@ class TestPrimeNumbers(unittest.TestCase):
 
     def test_input_is_positive(self):
         self.assertEqual(primeNumbers(-5), [])
+    def test_input_is_one(self):
+        self.assertEqual(primeNumbers(1), [])
+    def test_input_is_two(self):
+        self.assertEqual(primeNumbers(2), [2])
     def test_input_is_Not_a_list(self):
     	self.assertRaises(TypeError,primeNumbers, [2,4])
     def test_input_is_zero(self):
@@ -16,5 +20,7 @@ class TestPrimeNumbers(unittest.TestCase):
         self.assertEqual(primeNumbers(8), [2,3,5,7])
     def test_input_is_not_a_dictionary(self):
         self.assertRaises(TypeError,primeNumbers, {"jane":2, "tom":4})
+    def test_input_is_not_a_string(self):
+        self.assertRaises(TypeError,primeNumbers, "five")
 if __name__ == "__main__":
     unittest.main(exit = False)
